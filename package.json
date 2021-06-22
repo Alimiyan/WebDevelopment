@@ -1,0 +1,24 @@
+{
+  "name": "webdevelopment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "readline-sync": "^1.4.10",
+    "upper-case": "^2.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alimiyan/WebDevelopment.git"
+  },
+  "author": "alimiyan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alimiyan/WebDevelopment/issues"
+  },
+  "homepage": "https://github.com/Alimiyan/WebDevelopment#readme"
+}
