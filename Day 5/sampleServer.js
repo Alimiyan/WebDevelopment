@@ -2,6 +2,8 @@
 var http=require('http') //importing http module
 var fs=require('fs') //importing file system module, to acces system files
 
+//first run the createserver func,
+// then call the callback to avoid the server restart when changes are made
 http.createServer(function(req,res){
     
     //passing the file
