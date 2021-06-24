@@ -13,8 +13,15 @@ http.createServer(function(req,res){
             res.write(data) // content to display
             res.end()   //end of request
         })
-    }else if(req.url== '/login'){ //loginpage
-        res.write('successfull')
+    }else if(req.url== '/signup'){ //loginpage
+        fs.readFile('Day 5/signup.html',(err,data)=>{
+            res.writeHead(200,{'Content-Type':'text/html'})
+            res.write(data)
+            res.end()
+        })
+    }else if(req.url== '/signupaction'){ //actionpage
+        res.writeHead(200,{'Content-Type':'text/html'})
+        res.write("signup successfull")
         res.end()
     }else{
         res.writeHead(404,{'Content-Type':'text/html'})
