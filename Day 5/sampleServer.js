@@ -1,13 +1,15 @@
 // server creation
 var http=require('http') //importing http module
 var fs=require('fs') //importing file system module, to acces system files
-var url=require('url') //importing url module
+var url=require('url'); //importing url module
+const { basename } = require('path');
 
 //first run the createserver func,
 // then call the callback to avoid the server restart when changes are made
 http.createServer(function(req,res){
-    var q= url.parse(req.url,true)
-    //console.log(q.pathname)
+    //var q= url.parse(req.url,true) //old method
+    var q= new URL(req.url,"http://localhost:7000") //new method
+   // console.log(q)
     //main page
     if(q.pathname=='/'){
          //passing the file
@@ -25,7 +27,9 @@ http.createServer(function(req,res){
     }else if(q.pathname== '/signupaction'){ //actionpage
         console.log(q.query)
         res.writeHead(200,{'Content-Type':'text/html'})
-        res.write("<h1>"+"Welcome back "+q.query.FName+"</h1?>")
+        let par=q.searchParams //
+        let name=par.get("FName") //getting name
+        res.write("<h1>"+"Welcome back "+name+"</h1?>")
         res.end()
     }else{
         res.writeHead(404,{'Content-Type':'text/html'})
