@@ -5,14 +5,24 @@ var fs=require('fs') //importing file system module, to acces system files
 //first run the createserver func,
 // then call the callback to avoid the server restart when changes are made
 http.createServer(function(req,res){
-    
-    //passing the file
-    fs.readFile('Day 5/samplefrontend.html',function(err,data){
-        res.writeHead(200,{'Content-Type':'text/html'}) //error code, type of file to display
-        res.write(data) // content to display
-        res.end()   //end of request
-    })
+    //main page
+    if(req.url=='/'){
+         //passing the file
+        fs.readFile('Day 5/samplefrontend.html',function(err,data){
+            res.writeHead(200,{'Content-Type':'text/html'}) //error code, type of file to display
+            res.write(data) // content to display
+            res.end()   //end of request
+        })
+    }else if(req.url== '/login'){ //loginpage
+        res.write('successfull')
+        res.end()
+    }else{
+        res.writeHead(404,{'Content-Type':'text/html'})
+        res.write('error')
+        res.end()
+    }
    
-}).listen(7000)//portnumber
+   //portnumber ,, arrow fun for server running msg
+}).listen(7000,()=>console.log("Server up and running"))
 
     
