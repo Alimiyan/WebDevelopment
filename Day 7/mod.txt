@@ -1,0 +1,5 @@
+npx express-generator --hbs
+
+npm install
+
+npm audit fix
