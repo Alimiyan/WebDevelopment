@@ -1,0 +1,22 @@
+<!-- each open and close to work like a loop -->
+<!--
+{{#each name}}
+
+<h1>{{@index}}. {{this}} </h1>
+
+{{/each}}
+-->
+<!--
+<h1>{{person.comments.comment}}</h1>
+-->
+{{#with person}}
+    {{#with comments}}
+        <h1>comment= {{comment}}</h1>
+        <h1>Date= {{date}}</h1>
+    {{/with}}
+{{/with}}
+{{#if user.admin}}
+    <h1>This is admin</h1>
+{{else}}
+    <h1>Guest user</h1>
+{{/if}}
