@@ -1,0 +1,6 @@
+npx express-generator --hbs  
+  -- hbs(view engine)
+
+npm install
+
+npm audit fix
