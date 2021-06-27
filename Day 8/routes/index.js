@@ -13,7 +13,7 @@ router.post('/submit',function(req, res) {
     if(err)
       console.log("error")
     else  
-      console.log("Database connected")
+      client.db('sampleProject').collection('user').insertOne(req.body)
   })
   res.send("successfull")
 })
